@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
+<html lang="en">
 
-    <body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP app</title>
+  </head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+  <body>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
+    <header>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+      <div class="logo">
+        <img class="logo-img" src="../images/logo.png" alt="logo">
+        <p class="logo-text">
+          Natural Language Processing (NLP)
+        </p>
+      </div>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="">Input URL for check</a></li>
+          <li class="nav-item"><a href="">NLP result</a></li>
+          <li class="nav-item"><a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Sentiment Analysis API</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    </body>
+      <main>
+        <section>
+          <form class="" onsubmit="return handleSubmit(event)">
+            <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+            <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+          </form>
+        </section>
+
+        <section>
+          <strong>Form Results:</strong>
+          <div id="results"></div>
+        </section>
+      </main>
+
+      <footer>
+        <p id="copyright">Copyright © 2022 <em>&nbsp; &nbsp; Marina Saitgareeva</em></p>
+      </footer>
+
+  </body>
 </html>

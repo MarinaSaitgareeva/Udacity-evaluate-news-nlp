@@ -15,6 +15,8 @@ var meaning = MeaningCloud({
     // uri: 'custom-uri'
   });
 
+console.log(meaning);
+
 // Require path to provide a way of working with directories and file paths
 var path = require('path');
 
@@ -34,9 +36,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false })); // to use url encoded values
 app.use(bodyParser.json()); // to use json
 
-// Cors for cross origin allowance
+// Require cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
+
+// Require module node-fetch to use the fetch() function in NodeJS
+const fetch = require('node-fetch');
 
 // Initialize the main project folder
 app.use(express.static('dist'));
@@ -55,11 +60,19 @@ const server = app.listen(port, () => {
 // GET route
 app.get('/', (req, res) => {
     res.sendFile(path.resolve('dist/index.html'))
+    // res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
+
+// Personal API Key for OpenWeatherMap API
+const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
+const apiKey = process.env.API_KEY;
+const type = '&txt=';
+const lang = '&lang=en';
+
 // POST route
-app.post('/urlEvaluate', async(req, res) => {
-    const response = await fetch('https://api.meaningcloud.com/sentiment-2.1?key=' + process.env.API_KEY + '&txt=' + req.body.text + '&lang=en');
+app.post('/inputEvaluate', async(req, res) => {
+    const response = await fetch(baseURL + apiKey + type + req.body.text + lang);
     try {
         // data equals to the result of fetch function
         const data = await response.json();
