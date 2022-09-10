@@ -38,16 +38,16 @@
         </section>
 
         <section class="inputForm" id="inputForm">
-          <form class="inputFormField" onsubmit="return handleSubmit(event)">
+          <form class="inputFormField" onsubmit="return Client.handleSubmit(event)">
             <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Please insert URL for NLP sentiment analysis">
-            <input id="inputBtn" type="submit" name="" value="Submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+            <input id="inputBtn" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
           </form>
         </section>
 
         <section class="nlpResult" id="nlpResult">
           <strong>NLP Sentiment Analysis Results:</strong>
           <div id="results">
-            
+
           </div>
         </section>
       </main>

@@ -2,18 +2,14 @@
 const dotenv = require('dotenv');
 dotenv.config()
 
-// // Require the library MeaningCloud
-// var MeaningCloud = require('meaning-cloud');
+// Require the library MeaningCloud
+var MeaningCloud = require('meaning-cloud');
 
-// // Declare the MeaningCloud API credentials
-// var meaning = MeaningCloud({
-//     // API Key. Required.
-//     key: process.env.API_KEY,
-//     // HTTPS or HTTPS. Optional, true by default.
-//     // secure: true,
-//     // URI to create the API endpoints. Optional.
-//     // uri: 'custom-uri'
-//   });
+// Declare the API MeaningCloud credentials
+var meaning = MeaningCloud({
+    // API Key. Required.
+    key: process.env.API_KEY
+  });
 
 // Require path to provide a way of working with directories and file paths
 var path = require('path');
@@ -62,18 +58,18 @@ app.get('/', (req, res) => {
 })
 
 
-// Personal API Key for OpenWeatherMap API
+// Personal API Key for API MeaningCloud
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 const apiKey = process.env.API_KEY;
-const type = '&txt=';
+const type = '&url=';
 const lang = '&lang=en';
 
-// POST route
-app.post('/inputEvaluate', async(req, res) => {
-    const response = await fetch(baseURL + apiKey + type + req.body.text + lang);
+// POST route (request API MeaningCloud)
+app.post('/getEvaluate', async(req, res) => {
+    const evaluate = await fetch(baseURL + apiKey + lang + type + req.body.formText);
     try {
         // data equals to the result of fetch function
-        const data = await response.json();
+        const data = await evaluate.json();
         console.log(data);
         res.send(data);
     } 
