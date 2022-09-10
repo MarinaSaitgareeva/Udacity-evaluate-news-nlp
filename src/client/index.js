@@ -8,3 +8,8 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 console.log(checkForName);
+
+// Add logo in App
+import logo from './assets/logo.png'
+const logoImg = document.querySelector('#logo-img');
+logoImg.src = logo;

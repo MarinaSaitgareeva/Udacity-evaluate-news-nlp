@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+$primary-color: #263238;
+
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+	font-family: 'Rubik', sans-serif;
+	background-color: #f5f5f5;
+	color: $primary-color;
+	line-height: 1.5;
 }
 
 main {
-    flex: 2;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: repeat(2, 1fr);
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+.description {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50rem;
+    font-size: 0.9rem;
+    margin: 2rem;
 }

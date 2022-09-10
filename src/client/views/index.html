@@ -13,32 +13,42 @@
     <header>
 
       <div class="logo">
-        <img class="logo-img" src="../images/logo.png" alt="logo">
+        <img class="logo-img" id="logo-img" alt="logo">
         <p class="logo-text">
-          Natural Language Processing (NLP)
+          Evaluate a News Article with NLP
         </p>
       </div>
 
       <nav class="navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="">Input URL for check</a></li>
-          <li class="nav-item"><a href="">NLP result</a></li>
+          <li class="nav-item"><a href="#inputForm">Input URL for check</a></li>
+          <li class="nav-item"><a href="#nlpResult">NLP result</a></li>
           <li class="nav-item"><a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Sentiment Analysis API</a></li>
         </ul>
       </nav>
     </header>
 
       <main>
-        <section>
-          <form class="" onsubmit="return handleSubmit(event)">
-            <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-            <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+        <section class="description" id="description">
+          <h3>What is Sentiment Analysis?</h3>
+          <p>Sentiment Analysis is solution for performing a detailed multilingual sentiment analysis of texts from different sources.</p>
+          <p>The text provided is analyzed to determine if it expresses a positive/negative/neutral sentiment.</p>
+          <p>Besides polarity at sentence and global level, Sentiment Analysis uses advanced natural language processing techniques to also detect the polarity associated to both entities and concepts in the text.</p>
+          <p>Additionally, Sentiment Analysis detects if the text processed is subjective or objective and if it contains irony marks [beta] at a global level, giving the user additional information about the reliability of the polarity obtained from the sentiment analysis.</p>
+        </section>
+
+        <section class="inputForm" id="inputForm">
+          <form class="inputFormField" onsubmit="return handleSubmit(event)">
+            <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Please insert URL for NLP sentiment analysis">
+            <input id="inputBtn" type="submit" name="" value="Submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
           </form>
         </section>
 
-        <section>
-          <strong>Form Results:</strong>
-          <div id="results"></div>
+        <section class="nlpResult" id="nlpResult">
+          <strong>NLP Sentiment Analysis Results:</strong>
+          <div id="results">
+            
+          </div>
         </section>
       </main>
 

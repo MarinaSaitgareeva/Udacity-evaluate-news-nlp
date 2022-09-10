@@ -1,12 +1,51 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+.inputForm {
+    height: 60%;
+    background-color: #6abfea60;
+    border: 1px solid #54545452;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgb(50 50 50 / 47%);
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.inputFormField {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
 input {
+    text-align: center;
+    border: 1px solid #54545458;
+    border-radius: 1rem;
     padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+}
+
+#name {
+    width: 80%;
+    height: 2.5rem;
+}
+
+#inputBtn {
+    background: #3189e1ec;
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: 20%;
+    height: 2rem;
+    transition: 0.2s all ease-in-out;
+
+    &:hover {
+        background: #094683;
+        box-shadow: 0 0 1rem 0 rgb(50 50 50 / 60%);
+    }
+}
+
+.nlpResult {
+    opacity: 1;
+    text-align: center;
+    position: relative;
+    top: -4rem;
 }

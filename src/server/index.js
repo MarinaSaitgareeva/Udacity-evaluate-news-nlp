@@ -2,20 +2,18 @@
 const dotenv = require('dotenv');
 dotenv.config()
 
-// Require the library MeaningCloud
-var MeaningCloud = require('meaning-cloud');
+// // Require the library MeaningCloud
+// var MeaningCloud = require('meaning-cloud');
 
-// Declare the MeaningCloud API credentials
-var meaning = MeaningCloud({
-    // API Key. Required.
-    key: process.env.API_KEY,
-    // HTTPS or HTTPS. Optional, true by default.
-    // secure: true,
-    // URI to create the API endpoints. Optional.
-    // uri: 'custom-uri'
-  });
-
-console.log(meaning);
+// // Declare the MeaningCloud API credentials
+// var meaning = MeaningCloud({
+//     // API Key. Required.
+//     key: process.env.API_KEY,
+//     // HTTPS or HTTPS. Optional, true by default.
+//     // secure: true,
+//     // URI to create the API endpoints. Optional.
+//     // uri: 'custom-uri'
+//   });
 
 // Require path to provide a way of working with directories and file paths
 var path = require('path');
