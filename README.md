@@ -49,6 +49,7 @@ npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 
 # Command	Action
 npm run build-prod for Build project
+
 npm run start for	Run project
 
 Open browser at http://localhost:8080/
