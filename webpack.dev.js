@@ -12,7 +12,10 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
+    assetModuleFilename: '[name][ext]',
+    libraryTarget: 'var',
+    library: 'Client'
   },
   stats: 'verbose',
   module: {

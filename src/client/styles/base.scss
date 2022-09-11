@@ -12,10 +12,10 @@ body {
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 20rem);
 }
 
 .description {

@@ -2,15 +2,6 @@
 const dotenv = require('dotenv');
 dotenv.config()
 
-// Require the library MeaningCloud
-var MeaningCloud = require('meaning-cloud');
-
-// Declare the API MeaningCloud credentials
-var meaning = MeaningCloud({
-    // API Key. Required.
-    key: process.env.API_KEY
-  });
-
 // Require path to provide a way of working with directories and file paths
 var path = require('path');
 
@@ -35,7 +26,11 @@ const cors = require('cors');
 app.use(cors());
 
 // Require module node-fetch to use the fetch() function in NodeJS
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
+
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
+
 
 // Initialize the main project folder
 app.use(express.static('dist'));
@@ -46,7 +41,7 @@ console.log(__dirname);
 const port = 8080;
 
 // Designates what port the app will listen to for incoming requests
-const server = app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });
 
@@ -61,15 +56,16 @@ app.get('/', (req, res) => {
 // Personal API Key for API MeaningCloud
 const baseURL = 'https://api.meaningcloud.com/sentiment-2.1?key=';
 const apiKey = process.env.API_KEY;
+const lang = '&lang=auto';
 const type = '&url=';
-const lang = '&lang=en';
+
 
 // POST route (request API MeaningCloud)
-app.post('/getEvaluate', async(req, res) => {
-    const evaluate = await fetch(baseURL + apiKey + lang + type + req.body.formText);
+app.post('/apiData', async(req, res) => {
+    const apiResult = await fetch(baseURL + apiKey + lang + type + req.body.url);
     try {
         // data equals to the result of fetch function
-        const data = await evaluate.json();
+        const data = await apiResult.json();
         console.log(data);
         res.send(data);
     } 
@@ -83,4 +79,3 @@ app.post('/getEvaluate', async(req, res) => {
 app.get('/test', (req, res) => {
     res.send(mockAPIResponse)
 })
-

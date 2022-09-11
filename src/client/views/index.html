@@ -21,8 +21,8 @@
 
       <nav class="navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#inputForm">Input URL for check</a></li>
-          <li class="nav-item"><a href="#nlpResult">NLP result</a></li>
+          <!-- <li class="nav-item"><a href="#inputForm">Input URL for check</a></li>
+          <li class="nav-item"><a href="#nlpResult">NLP result</a></li> -->
           <li class="nav-item"><a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">Sentiment Analysis API</a></li>
         </ul>
       </nav>
@@ -39,7 +39,7 @@
 
         <section class="inputForm" id="inputForm">
           <form class="inputFormField" onsubmit="return Client.handleSubmit(event)">
-            <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Please insert URL for NLP sentiment analysis">
+            <input id="url" type="text" name="input" value="" placeholder="Please insert URL for NLP sentiment analysis">
             <input id="inputBtn" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
           </form>
         </section>
@@ -47,7 +47,11 @@
         <section class="nlpResult" id="nlpResult">
           <strong>NLP Sentiment Analysis Results:</strong>
           <div id="results">
-
+            <p id="text" class="result-item"></p>
+            <p id="score" class="result-item"></p>
+            <p id="subjectivity"></p>
+            <p id="irony"></p>
+            <p id="confidence"></p>
           </div>
         </section>
       </main>
@@ -55,6 +59,16 @@
       <footer>
         <p id="copyright">Copyright © 2022 <em>&nbsp; &nbsp; Marina Saitgareeva</em></p>
       </footer>
+
+      <!-- <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+       </script> -->
 
   </body>
 </html>
