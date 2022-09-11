@@ -48,3 +48,15 @@ input {
     text-align: center;
 }
 
+// #nlpResult-title {
+//     margin-bottom: 1rem;
+// }
+
+#results {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#text {
+    grid-column: span 2;
+}

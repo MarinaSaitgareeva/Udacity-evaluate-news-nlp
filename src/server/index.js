@@ -27,7 +27,6 @@ app.use(cors());
 
 // Require module node-fetch to use the fetch() function in NodeJS
 // const fetch = require('node-fetch');
-
 const fetch = (...args) =>
   import('node-fetch').then(({ default: fetch }) => fetch(...args));
 

@@ -45,13 +45,13 @@
         </section>
 
         <section class="nlpResult" id="nlpResult">
-          <strong>NLP Sentiment Analysis Results:</strong>
+          <!-- <strong id="nlpResult-title">NLP Sentiment Analysis Results:</strong> -->
           <div id="results">
             <p id="text" class="result-item"></p>
             <p id="score" class="result-item"></p>
-            <p id="subjectivity"></p>
-            <p id="irony"></p>
-            <p id="confidence"></p>
+            <p id="subjectivity" class="result-item"></p>
+            <p id="irony" class="result-item"></p>
+            <p id="confidence" class="result-item"></p>
           </div>
         </section>
       </main>
@@ -60,7 +60,7 @@
         <p id="copyright">Copyright © 2022 <em>&nbsp; &nbsp; Marina Saitgareeva</em></p>
       </footer>
 
-      <!-- <script>
+      <script>
         // Check that service workers are supported
         if ('serviceWorker' in navigator) {
           // Use the window load event to keep the page load performant
@@ -68,7 +68,7 @@
             navigator.serviceWorker.register('/service-worker.js');
           });
         }
-       </script> -->
+       </script>
 
   </body>
 </html>
