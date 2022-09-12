@@ -11,6 +11,9 @@
   },
   "author": "Marina Saitgareeva",
   "license": "ISC",
+  "browser": {
+    "[module-name]": false   
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",

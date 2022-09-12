@@ -6,7 +6,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    bundle: path.resolve(__dirname, '/src/client/index.js')
+    index: path.resolve(__dirname, './src/client/index.js')
   },
   output: {
     filename: '[name].js',
