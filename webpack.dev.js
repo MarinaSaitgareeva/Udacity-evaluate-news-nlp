@@ -7,12 +7,8 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: {
-    index: path.resolve(__dirname, 'src/client/index.js')
-  },
+  entry: './src/client/index.js',
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
     clean: true,
     assetModuleFilename: '[name][ext]',
     libraryTarget: 'var',
